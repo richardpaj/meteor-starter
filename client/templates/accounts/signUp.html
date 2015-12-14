@@ -1,0 +1,14 @@
+<template name="signUp">
+  <form class="form-signup">
+    <h2 class="form-signup-heading">Sign up</h2>
+    <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
+    <input type="text" class="form-control" placeholder="Your name" name="name">
+    <input type="email" class="form-control" placeholder="Email" name="email">
+    <input type="password" class="form-control" placeholder="Password" name="password">
+    <input type="password" class="form-control" placeholder="Password (again)" name="password_confirm">
+    <input type="submit" value="Log in" class="form-control btn btn-default navbar-btn">
+    <div class="text-center">
+      If you already have an account, <a href="{{pathFor 'signIn'}}">log in</a>
+    </div>
+  </form>
+</template>

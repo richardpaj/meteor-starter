@@ -5,5 +5,5 @@ AccountsTemplates.configureRoute 'signIn',
 AccountsTemplates.configureRoute 'signUp',
   name: 'signUp'
   layoutTemplate: 'appLayout'
-  path: '/sign-up'
+  template: 'signUp'
 AccountsTemplates.configureRoute 'ensureSignedIn', layoutTemplate: 'appLayout'
