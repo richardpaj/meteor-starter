@@ -1,0 +1,11 @@
+<template name="signIn">
+  <form class="form-login">
+    <h2 class="form-login-heading">Please sign in</h2>
+    <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+    <input type="submit" value="Log in" class="form-control btn btn-default navbar-btn">
+    <div class="text-center">
+      Don't have an account? <a href="{{pathFor 'signUp'}}">Sign up</a>
+    </div>
+  </form>
+</template>
