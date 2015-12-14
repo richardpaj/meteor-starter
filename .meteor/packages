@@ -18,3 +18,21 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
+less
+accounts-password
+dburles:collection-helpers
+matb33:collection-hooks
+reywood:publish-composite
+iron:router
+zimme:iron-router-active
+yasinuslu:blaze-meta
+useraccounts:bootstrap
+alanning:roles
+dburles:factory
+anti:fake
+useraccounts:iron-routing
+aldeed:collection2
+aldeed:autoform
+momentjs:moment
+underscorestring:underscore.string
+cmather:handlebars-server
