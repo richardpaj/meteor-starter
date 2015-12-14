@@ -36,3 +36,4 @@ aldeed:autoform
 momentjs:moment
 underscorestring:underscore.string
 cmather:handlebars-server
+coffeescript
