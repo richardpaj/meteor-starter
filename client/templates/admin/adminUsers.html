@@ -7,6 +7,7 @@
         <th>Username</th>
         <th>Real name</th>
         <th>Email address</th>
+        <th>Registered</th>
         <th>Role</th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@
           <td class="text-left text-middle">{{username}}</td>
           <td>{{profile.name}}</td>
           <td>{{emails.[0].address}}</td>
+          <td>{{formatDate createdAt}}</td>
           <td>
             <label class="label {{#if isAdmin _id}}label-danger{{else}}label-success{{/if}}">{{roles.__global_roles__.[0]}}</label>
           </td>
