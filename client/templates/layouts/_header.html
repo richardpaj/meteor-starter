@@ -34,10 +34,12 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}"><i class="fa fa-home"></i> Home</a></li>
-          {{#if isInRole 'admin'}}
-            <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> Admin Dashboard</a></li>
-          {{else}}
-            <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> User Dashboard</a></li>
+          {{#if currentUser}}
+            {{#if isInRole 'admin'}}
+              <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> Admin Dashboard</a></li>
+            {{else}}
+              <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> User Dashboard</a></li>
+            {{/if}}
           {{/if}}
         </ul>
       </div>
