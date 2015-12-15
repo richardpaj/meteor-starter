@@ -1,0 +1,26 @@
+<template name="adminUsers">
+  <h1>Manage users</h1>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Real name</th>
+        <th>Email address</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <td class="text-left text-middle">{{username}}</td>
+          <td>{{profile.name}}</td>
+          <td>{{emails.[0].address}}</td>
+          <td>
+            <label class="label {{#if isAdmin _id}}label-danger{{else}}label-success{{/if}}">{{roles.__global_roles__.[0]}}</label>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
