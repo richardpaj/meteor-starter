@@ -38,7 +38,7 @@
             {{#if isInRole 'admin'}}
               <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> Admin Dashboard</a></li>
             {{else}}
-              <li class="{{ isActiveRoute regex='dashboard' }}"><a href="#"><i class="fa fa-gear"></i> User Dashboard</a></li>
+              <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{pathFor 'dashboard'}}"><i class="fa fa-gear"></i> User Dashboard</a></li>
             {{/if}}
           {{/if}}
         </ul>
