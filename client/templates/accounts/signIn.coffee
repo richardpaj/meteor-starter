@@ -8,3 +8,5 @@ Template.signIn.events
     Meteor.loginWithPassword username, password, (error) ->
       if error
         console.log(error.reason)
+      else
+        console.log 'success'

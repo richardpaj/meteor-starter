@@ -6,3 +6,6 @@ Meteor.methods
       password: password
       profile:
         name: name
+
+  'updateUser': (name, email) ->
+    Meteor.users.update Meteor.userId(), {$set: {'emails.0.address': email, profile: {name: name}}}
