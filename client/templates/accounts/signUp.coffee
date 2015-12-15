@@ -8,6 +8,11 @@ Template.signUp.events
     password = $('[name=password]').val()
     password_confirm = $('[name=password_confirm]').val()
 
+    if Meteor.users.find().count() == 0
+      role = 'admin'
+    else
+      role = 'user'
+
     if password == password_confirm
       Meteor.call 'registerUser', username, name, email, password
       Router.go 'home'
