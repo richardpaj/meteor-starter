@@ -7,5 +7,5 @@ Meteor.methods
       profile:
         name: name
 
-  'updateUser': (name, email) ->
-    Meteor.users.update Meteor.userId(), {$set: {'emails.0.address': email, profile: {name: name}}}
+  'updateUser': (username, name, email) ->
+    Meteor.users.update Meteor.userId(), {$set: {username: username, 'emails.0.address': email, profile: {name: name}}}
