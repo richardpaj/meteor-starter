@@ -4,7 +4,7 @@
     <label for="username">Username</label>
     <input type="text" id="username" name="username" value="{{currentUser.username}}" class="form-control">
     <label for="name">Your name</label>
-    <input type="text" id="name" name="name" value="{{currentUser.profile.name}}" class="form-control">
+    <input {{canUserChangeName}} type="text" id="name" name="name" value="{{currentUser.profile.name}}" class="form-control">
     <label for="email">Your email</label>
     <input type="text" id="email" name="email" value="{{currentUser.emails.[0].address}}" class="form-control">
     <input type="submit" value="Save" class="btn btn-default">

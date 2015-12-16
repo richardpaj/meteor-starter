@@ -7,3 +7,12 @@ Template.dashboard.events
     email = $('input[name=email]').val()
 
     Meteor.call 'updateUser', username, name, email
+
+Template.dashboard.helpers
+  'canUserChangeName': ->
+    changeName = Settings.findOne({}, {fields: 'userChangeName': 1})
+
+    if changeName
+      return ""
+    else
+      return "disabled"
