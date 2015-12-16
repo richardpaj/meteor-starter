@@ -1,6 +1,12 @@
 <template name="adminUsers">
   <h1>Manage users</h1>
 
+  <div>
+    {{> EasySearch.Input index=usersIndex attributes=inputAttributes}}
+  </div>
+
+  <br>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -12,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each users}}
+      {{#EasySearch.Each index=usersIndex}}
         <tr>
           <td class="text-left text-middle">{{username}}</td>
           <td>{{profile.name}}</td>
@@ -22,7 +28,7 @@
             <label class="label {{#if isAdmin _id}}label-danger{{else}}label-success{{/if}}">{{roles.__global_roles__.[0]}}</label>
           </td>
         </tr>
-      {{/each}}
+      {{/EasySearch.Each}}
     </tbody>
   </table>
 </template>

@@ -7,3 +7,7 @@ Template.adminUsers.helpers
 
     if users
       return users
+  'usersIndex': ->
+    UsersIndex
+  'inputAttributes': ->
+    return {'class': 'form-control', 'placeholder': 'Search'}
