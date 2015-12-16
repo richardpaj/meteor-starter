@@ -15,6 +15,7 @@
         <th>Email address</th>
         <th>Registered</th>
         <th>Role</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +26,12 @@
           <td>{{emails.[0].address}}</td>
           <td>{{formatDate createdAt}}</td>
           <td>
-            <label class="label {{#if isAdmin _id}}label-danger{{else}}label-success{{/if}}">{{roles.__global_roles__.[0]}}</label>
+            {{#each roles}}
+              <label class="label {{#if isAdmin ../_id}}label-danger{{else}}label-success{{/if}}" id="setAdmin">{{profile.name}}{{.}}</label>
+            {{/each}}
+          </td>
+          <td>
+            <i class="fa fa-trash" id="removeUser"></i>
           </td>
         </tr>
       {{/EasySearch.Each}}

@@ -1,6 +1,6 @@
 @UsersIndex = new EasySearch.Index
   collection: Meteor.users
-  fields: ['username', 'emails', 'profile.name', 'roles.__global_roles__']
+  fields: ['username', 'emails', 'profile.name', 'roles']
   engine: new EasySearch.Minimongo(
     selectorPerField: (field, searchString) ->
       if 'emails' == field
