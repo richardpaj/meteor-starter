@@ -17,7 +17,7 @@ Template.adminUsers.helpers
 Template.adminUsers.events
   'click #setAdmin': (e, t) ->
     if Roles.userIsInRole this._id, 'admin'
-      return
+      role = 'user'
     else
       role = 'admin'
 
