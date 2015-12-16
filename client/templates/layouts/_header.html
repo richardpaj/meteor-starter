@@ -22,7 +22,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 {{#if isInRole 'admin'}}
-                  <li class="{{ isActiveRoute regex='adminDashboard' }}"><a href="{{pathFor 'adminDashboard'}}"><i class="fa fa-gear"></i> Admin Dashboard</a></li>
+                  <li class="{{ isActiveRoute regex='admin(.*)' }}"><a href="{{pathFor 'adminDashboard'}}"><i class="fa fa-gear"></i> Admin Dashboard</a></li>
                 {{/if}}
                 <li><a href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a></li>
               </ul>
