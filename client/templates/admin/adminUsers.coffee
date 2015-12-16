@@ -11,6 +11,8 @@ Template.adminUsers.helpers
     UsersIndex
   'inputAttributes': ->
     return {'class': 'form-control', 'placeholder': 'Search'}
+  'isCurrentUser': ->
+    return if this._id is Meteor.userId() then true else false
 
 Template.adminUsers.events
   'click #setAdmin': (e, t) ->
@@ -32,20 +34,18 @@ Template.adminUsers.events
     #else
     #  role = 'user'
     Session.set 'selectedUser', this._id
-    console.log Session.get 'selectedUser'
     Modal.show 'confirmDelete'
 
 Template.confirmDelete.events
-  'click #deleteUser': (e, t) ->
-    if Roles.userIsInRole Session.get 'selectedUser', 'admin'
+  'click #deleteUser': (e) ->
+    if Roles.userIsInRole (Session.get 'selectedUser'), 'admin'
       role = 'admin'
     else
       role = 'user'
 
-    if Session.get 'selectedUser' != undefined
-      Meteor.call 'removeUser', {
-        user: Session.get 'selectedUser',
-        role: role
-      }, (error, response) ->
-        if error
-          console.log error.reason
+    Meteor.call 'removeUser', {
+      user: Session.get 'selectedUser',
+      role: role
+    }, (error, response) ->
+      if error
+        console.log error.reason

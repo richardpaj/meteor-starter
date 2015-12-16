@@ -31,7 +31,9 @@
             {{/each}}
           </td>
           <td>
-            <i class="fa fa-trash" id="removeUser"></i>
+            {{#unless isCurrentUser}}
+              <i class="fa fa-trash" id="removeUser"></i>
+            {{/unless}}
           </td>
         </tr>
       {{/EasySearch.Each}}
