@@ -29,5 +29,6 @@ Meteor.methods
     try
       Roles.removeUsersFromRoles options.user, [options.role]
       Meteor.users.remove {_id: options.user}
+      Session.set 'selectedUser', undefined
     catch exception
       return exception

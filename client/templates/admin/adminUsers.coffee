@@ -26,15 +26,26 @@ Template.adminUsers.events
       if error
         console.log error.reason
 
-  'click #removeUser': (e) ->
-    if Roles.userIsInRole this._id, 'admin'
+  'click #removeUser': (e, t) ->
+    #if Roles.userIsInRole this._id, 'admin'
+    #  role = 'admin'
+    #else
+    #  role = 'user'
+    Session.set 'selectedUser', this._id
+    console.log Session.get 'selectedUser'
+    Modal.show 'confirmDelete'
+
+Template.confirmDelete.events
+  'click #deleteUser': (e, t) ->
+    if Roles.userIsInRole Session.get 'selectedUser', 'admin'
       role = 'admin'
     else
       role = 'user'
 
-    Meteor.call 'removeUser', {
-      user: this._id,
-      role: role
-    }, (error, response) ->
-      if error
-        console.log error.reason
+    if Session.get 'selectedUser' != undefined
+      Meteor.call 'removeUser', {
+        user: Session.get 'selectedUser',
+        role: role
+      }, (error, response) ->
+        if error
+          console.log error.reason
