@@ -78,6 +78,7 @@ ordered-dict@1.0.4
 peerlibrary:assert@0.2.5
 peerlibrary:base-component@0.10.0
 peerlibrary:blaze-components@0.13.0
+peppelg:bootstrap-3-modal@1.0.4
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0
