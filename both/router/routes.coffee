@@ -7,6 +7,10 @@ Router.route '/dashboard',
   controller: DashboardController
 
 # Admin routes
+Router.route '/admin',
+  action: ->
+    Router.go 'adminDashboard'
+
 Router.route '/admin/dashboard',
   name: 'adminDashboard'
   controller: AdminController
