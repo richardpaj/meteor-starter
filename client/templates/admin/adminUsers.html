@@ -32,7 +32,9 @@
           </td>
           <td>
             {{#unless isCurrentUser}}
-              <i class="fa fa-trash" id="removeUser"></i>
+              {{#unless isAdmin _id}}
+                <i class="fa fa-trash link" id="removeUser"></i>
+              {{/unless}}
             {{/unless}}
           </td>
         </tr>
