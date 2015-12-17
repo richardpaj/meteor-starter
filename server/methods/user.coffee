@@ -12,7 +12,7 @@ Meteor.methods
     else
       Roles.addUsersToRoles(id, 'user')
 
-  'updateUser': (username, name, email) ->
+  'updateCurrentUser': (username, name, email) ->
     Meteor.users.update Meteor.userId(), {$set: {username: username, 'emails.0.address': email, profile: {name: name}}}
 
   'setUserAdmin': (options) ->
@@ -24,6 +24,16 @@ Meteor.methods
       Roles.setUserRoles options.user, [options.role]
     catch exception
       return exception
+
+  'updateUser': (options) ->
+    _id = options._id
+    Meteor.users.update _id: _id, {$set: {username: options.username, profile: {name: options.name}, 'emails.0.address': options.email}}
+
+    unless Roles.userIsInRole _id, ['site-admin']
+      if options.role == 'site-admin'
+        Roles.setUserRoles _id, [options.role, 'admin']
+      else
+        Roles.setUserRoles _id, [options.role]
 
   'removeUser': (options) ->
     try

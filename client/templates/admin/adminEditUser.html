@@ -2,4 +2,20 @@
   {{>breadcrumb}}
 
   <h1>Edit {{user.username}}</h1>
+  <form class="form-user-dashboard">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="{{user.username}}" class="form-control">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{user.profile.name}}" class="form-control">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="{{user.emails.[0].address}}" class="form-control">
+    {{#unless isSiteAdmin user._id}}
+      <select class="form-control" name="role">
+        <option selected="{{selected user.roles.[0] 'site-admin'}}" value="site-admin">Site admin</option>
+        <option selected="{{selected user.roles.[0] 'admin'}}" value="admin">Admin</option>
+        <option selected="{{selected user.roles.[0] 'user'}}" value="user">User</option>
+      </select>
+    {{/unless}}
+    <input type="submit" value="Save" class="btn btn-default">
+  </form>
 </template>

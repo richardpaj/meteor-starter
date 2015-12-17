@@ -6,7 +6,7 @@ Template.dashboard.events
     name = $('input[name=name]').val()
     email = $('input[name=email]').val()
 
-    Meteor.call 'updateUser', username, name, email
+    Meteor.call 'updateCurrentUser', username, name, email
 
 Template.dashboard.helpers
   'canUserChangeName': ->

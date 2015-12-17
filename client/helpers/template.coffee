@@ -6,3 +6,6 @@ Template.registerHelper 'isSiteAdmin', (userId) ->
 
 Template.registerHelper 'formatDate', (date) ->
   return moment(date).format("MMMM Do YYYY, hh:mm:ss A")
+
+Template.registerHelper 'selected', (v1, v2) ->
+  return if v1 == v2 then true else false
