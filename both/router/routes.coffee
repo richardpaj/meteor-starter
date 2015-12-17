@@ -34,4 +34,4 @@ Router.route '/admin/user/edit/:_id',
 
 # Make sure the user is signed in
 Router.plugin 'ensureSignedIn',
-  only: ['dashboard', 'adminDashboard', 'adminUsers']
+  only: ['dashboard', 'adminDashboard', 'adminUsers', 'adminEditUser']
