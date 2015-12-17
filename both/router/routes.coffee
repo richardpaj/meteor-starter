@@ -29,6 +29,8 @@ Router.route '/admin/user/edit/:_id',
   parent: 'adminUsers'
   title: 'Edit user'
   showLink: false
+  data: ->
+    return {_id: this.params._id}
 
 # Make sure the user is signed in
 Router.plugin 'ensureSignedIn',
