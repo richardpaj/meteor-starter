@@ -34,6 +34,7 @@ Template.adminUsers.events
     #else
     #  role = 'user'
     Session.set 'selectedUser', this._id
+    Session.set 'selectedUsername', this.username
     Modal.show 'confirmDelete'
 
   'click #editUser': (id) ->
