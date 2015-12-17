@@ -33,7 +33,13 @@
             {{/each}}
           </td>
           <td>
-            <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
+            {{#unless isSiteAdmin _id}}
+              <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
+            {{else}}
+              {{#if isCurrentUser}}
+                <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
+              {{/if}}
+            {{/unless}}
             {{#unless isSiteAdmin _id}}
               {{#unless isCurrentUser}}
                 {{#if isAdmin _id}}
