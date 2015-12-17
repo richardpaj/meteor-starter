@@ -1,6 +1,6 @@
 <template name="adminUsers">
   {{>breadcrumb}}
-  
+
   <h1>Manage users</h1>
 
   <div>
@@ -33,6 +33,7 @@
             {{/each}}
           </td>
           <td>
+            <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
             {{#unless isSiteAdmin _id}}
               {{#unless isCurrentUser}}
                 {{#if isAdmin _id}}
