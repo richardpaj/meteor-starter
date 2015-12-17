@@ -11,8 +11,6 @@ Template.adminUsers.helpers
     UsersIndex
   'inputAttributes': ->
     return {'class': 'form-control', 'placeholder': 'Search'}
-  'isCurrentUser': ->
-    return if this._id is Meteor.userId() then true else false
 
 Template.adminUsers.events
   'click #setAdmin': (e, t) ->

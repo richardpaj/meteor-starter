@@ -36,12 +36,12 @@
             {{#unless isSiteAdmin _id}}
               <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
             {{else}}
-              {{#if isCurrentUser}}
+              {{#if isCurrentUser _id}}
                 <i class="fa fa-pencil link" id="editUser" title="Edit {{username}}"></i>
               {{/if}}
             {{/unless}}
             {{#unless isSiteAdmin _id}}
-              {{#unless isCurrentUser}}
+              {{#unless isCurrentUser _id}}
                 {{#if isAdmin _id}}
                   <i class="fa fa-thumbs-o-down link" id="setAdmin" title="Demote user"></i>
                 {{else}}

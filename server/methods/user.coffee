@@ -29,7 +29,7 @@ Meteor.methods
     _id = options._id
     Meteor.users.update _id: _id, {$set: {username: options.username, profile: {name: options.name}, 'emails.0.address': options.email}}
 
-    unless Roles.userIsInRole _id, ['site-admin']
+    if Roles.userIsInRole Meteor.userId(), ['site-admin']
       if options.role == 'site-admin'
         Roles.setUserRoles _id, [options.role, 'admin']
       else

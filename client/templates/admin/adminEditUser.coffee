@@ -27,3 +27,6 @@ Template.adminEditUser.events
       role: role
 
     Router.go 'adminUsers'
+
+  'click #cancel': ->
+    Router.go 'adminUsers'
