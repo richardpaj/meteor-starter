@@ -21,6 +21,13 @@ Router.route '/admin/users',
   controller: AdminController
   parent: 'adminDashboard'
   title: 'Manage users'
+  showLink: true
+
+Router.route '/admin/user/edit/:_id',
+  name: 'adminEditUser'
+  controller: AdminController
+  parent: 'adminUsers'
+  title: 'Edit user'
   showLink: false
 
 # Make sure the user is signed in

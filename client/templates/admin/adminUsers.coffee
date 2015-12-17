@@ -36,6 +36,10 @@ Template.adminUsers.events
     Session.set 'selectedUser', this._id
     Modal.show 'confirmDelete'
 
+  'click #editUser': (id) ->
+    id = this._id
+    Router.go 'adminEditUser', {_id: id}
+
 Template.confirmDelete.events
   'click #deleteUser': (e) ->
     if Roles.userIsInRole (Session.get 'selectedUser'), 'admin'
