@@ -8,6 +8,8 @@ Template.dashboard.events
 
     Meteor.call 'updateCurrentUser', username, name, email
 
+    sAlert.success('Your profile has been updated successfully')
+
 Template.dashboard.helpers
   'canUserChangeName': ->
     changeName = Settings.findOne({}, {fields: 'userChangeName': 1})
