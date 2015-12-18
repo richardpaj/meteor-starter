@@ -29,11 +29,12 @@ Meteor.methods
     _id = options._id
     Meteor.users.update _id: _id, {$set: {username: options.username, profile: {name: options.name}, 'emails.0.address': options.email}}
 
-    if Roles.userIsInRole Meteor.userId(), ['site-admin']
-      if options.role == 'site-admin'
-        Roles.setUserRoles _id, [options.role, 'admin']
-      else
-        Roles.setUserRoles _id, [options.role]
+    if options.role
+      if Roles.userIsInRole Meteor.userId(), ['site-admin']
+        if options.role == 'site-admin'
+          Roles.setUserRoles _id, [options.role, 'admin']
+        else
+          Roles.setUserRoles _id, [options.role]
 
   'removeUser': (options) ->
     try
