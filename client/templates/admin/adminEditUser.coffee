@@ -26,6 +26,9 @@ Template.adminEditUser.events
       email: email,
       role: role
 
+    sAlert.success 'User has been updated successfully',
+      {onRouteClose: false, effect: 'stackslide', timeout: '2000', offset: '40px'}
+
     Router.go 'adminUsers'
 
   'click #cancel': ->
