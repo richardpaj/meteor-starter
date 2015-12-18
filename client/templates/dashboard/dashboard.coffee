@@ -8,7 +8,7 @@ Template.dashboard.events
 
     Meteor.call 'updateCurrentUser', username, name, email
 
-    sAlert.success('Your profile has been updated successfully')
+    sAlert.success 'Your profile has been updated successfully', {effect: 'stackslide', timeout: '1500', offset: '50px'}
 
 Template.dashboard.helpers
   'canUserChangeName': ->
